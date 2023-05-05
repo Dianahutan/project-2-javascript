@@ -1,24 +1,49 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+const url =
+  "http://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline"
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+const getProducts = async () => {
+  const data = await fetch(url)
+  return data.json()
+}
 
-setupCounter(document.querySelector('#counter'))
+getProducts()
+
+const createList = async () => {
+  const listEl = document.querySelector(".list")
+  const data = await getProducts()
+
+  data.forEach((data) => {
+    const el = createElemment(data)
+    listEl.appendChild(el)
+  })
+}
+
+const createElemment = (itemData) => {
+  const columnElement = document.createElement("div")
+  const productEl = document.createElement("p")
+  const imageEl = document.createElement("img")
+  const titleEl = document.createElement("h1")
+  const overviewEl = document.createElement("p")
+  const priceEl = document.createElement("p")
+
+  productEl.innerText = itemData.product_type
+  imageEl.src = itemData.api_featured_image
+  imageEl.style.width = "150px"
+  titleEl.innerText = itemData.name
+  overviewEl.innerText = itemData.description
+  priceEl.innerText = itemData.price
+
+  columnElement.appendChild(productEl)
+  columnElement.appendChild(imageEl)
+  columnElement.appendChild(titleEl)
+  columnElement.appendChild(overviewEl)
+  columnElement.appendChild(priceEl)
+
+  return columnElement
+}
+
+createList()
+
+/*data.filter(function (value) {
+  return value="bronzer"
+  })  */
