@@ -6,40 +6,47 @@ const getProducts = async () => {
   return data.json()
 }
 
-getProducts()
 
 const createList = async () => {
   const listEl = document.querySelector(".list")
   const data = await getProducts()
 
   data.forEach((data) => {
+    console.log(data)
     const el = createElemment(data)
     listEl.appendChild(el)
   })
 }
 
 const createElemment = (itemData) => {
-  const columnElement = document.createElement("div")
-  const productEl = document.createElement("p")
+  const containerElement = document.createElement("div")
+  containerElement.classList.add("main")
+
+  const containerElementCard= document.createElement("div")
+  containerElement.classList.add("element_card")
   const imageEl = document.createElement("img")
   const titleEl = document.createElement("h1")
   const overviewEl = document.createElement("p")
   const priceEl = document.createElement("p")
-
-  productEl.innerText = itemData.product_type
+  const buyEl= document.createElement("buttton")
+ 
   imageEl.src = itemData.api_featured_image
   imageEl.style.width = "150px"
   titleEl.innerText = itemData.name
-  overviewEl.innerText = itemData.description
-  priceEl.innerText = itemData.price
+  overviewEl.innerText = itemData.description.split("\n").join("")
+  buyEl.innerText= "Buy now!"
+  priceEl.innerText = itemData.price + " €"
 
-  columnElement.appendChild(productEl)
-  columnElement.appendChild(imageEl)
-  columnElement.appendChild(titleEl)
-  columnElement.appendChild(overviewEl)
-  columnElement.appendChild(priceEl)
+  containerElement.appendChild(containerElementCard)
+  containerElementCard.appendChild(imageEl)
+  containerElementCard.appendChild(titleEl)
+  containerElementCard.appendChild(overviewEl)
+  containerElementCard.appendChild(priceEl)
+  containerElementCard.appendChild(buyEl)
+  
 
-  return columnElement
+
+  return containerElement
 }
 
 createList()
@@ -47,3 +54,4 @@ createList()
 /*data.filter(function (value) {
   return value="bronzer"
   })  */
+ronzer"
