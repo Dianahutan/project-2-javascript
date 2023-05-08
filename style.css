@@ -1,40 +1,111 @@
-.product_title{
-    font-size: large;
-    color: #D5B9B2;
+/* See all section */
+ 
+.card-title-section{
+  font-weight: bold;
+  font-size: 40px;
+  color: #000;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
-.overview_element{ 
-    font-size: small;
-   
+.card-tex-section{
+  font-weight: bold;
+  font-size: 20px;
+  color: #000;
+  font-weight: bold;
+  letter-spacing: 0.5px;
 }
 
-.element_card{
-    margin: 2rem;
-    padding: auto;
-    display: flex;
-    flex-direction: row;
+/* API elements styling */
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
+.element_card {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  padding: 1rem;
+  width: 25rem;
+  height: 20rem;
+}
 
+.product_title {
+  font-size: large;
+  color: #000;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/*.overview_element {
+  font-family: "Helvetica Neue LT W05_55 Roman";
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+} */
+
+/* Buy now! Button styling */
+
+button {
+  outline: 0;
+  border: none;
+  cursor: pointer;
+  padding: 0 24px;
+  border-radius: 50px;
+  min-width: 200px;
+  height: 50px;
+  font-size: 18px;
+  background-color: #000;
+  font-weight: 500;
+  color: #fff;
+}
+
+.buy_button {
+  display: flex;
+  justify-content: flex-start;
+  margin: 1rem;
+  padding: 1rem;
+}
 
 /*Carousel */
 
 .caption_img {
-    margin-right: 60rem;
+  margin-right: 60rem;
 }
 
-.caption_text{
-    font-family: 'Neue Helvetica W01_79 C1289709';
-    font-weight: bold;
-    font-size: 40px;
-    margin-bottom: -16rem ;
+.caption_text {
+  font-family: "Neue Helvetica W01_79 C1289709";
+  font-weight: bold;
+  font-size: 40px;
+  margin-bottom: -16rem;
 }
 
-.caption__text{
-    font-family: 'Neue Helvetica W01_79 C1289709';
-    font-weight: bold;
-    font-size: 30px;
+.caption__text {
+  font-family: "Neue Helvetica W01_79 C1289709";
+  font-weight: bold;
+  font-size: 30px;
 }
 
+/*Footer */
 
+.card-title {
+  font-size: 70px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.email_form {
+  width: 330px; 
+  border-radius: 10px;
+  padding: 40px 30px;
+  margin-top: 100px;
+  background: transparent;
+}
 
