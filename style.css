@@ -1,0 +1,40 @@
+.product_title{
+    font-size: large;
+    color: #D5B9B2;
+}
+
+.overview_element{ 
+    font-size: small;
+   
+}
+
+.element_card{
+    margin: 2rem;
+    padding: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+/*Carousel */
+
+.caption_img {
+    margin-right: 60rem;
+}
+
+.caption_text{
+    font-family: 'Neue Helvetica W01_79 C1289709';
+    font-weight: bold;
+    font-size: 40px;
+    margin-bottom: -16rem ;
+}
+
+.caption__text{
+    font-family: 'Neue Helvetica W01_79 C1289709';
+    font-weight: bold;
+    font-size: 30px;
+}
+
+
+
