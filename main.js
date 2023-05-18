@@ -33,9 +33,6 @@ const createElement = (product) => {
   const titleEl = document.createElement("h1")
   titleEl.classList.add("product_title")
 
-  /* const overviewEl = document.createElement("p")
-  overviewEl.classList.add("overview_element") */
-
   const priceEl = document.createElement("div")
 
   const containerButtons = document.createElement("div")
@@ -54,30 +51,24 @@ const createElement = (product) => {
   const icon = document.createElement("i")
   icon.classList.add("fas", "fa-heart")
 
-  /*favoritesEl.src = "./ASSETS/heart-solid.SVG"
-  favoritesEl.style.width= "20px" */
-
   imageEl.src = product.api_featured_image
   imageEl.style.width = "150px"
   titleEl.innerText = product.name
+  priceEl.innerText = product.price + " €"
 
   favoritesEl.addEventListener("click", () => {
     const favorites = JSON.parse(localStorage.getItem("products")) || []
     favorites.push(product)
     localStorage.setItem("products", JSON.stringify(favorites))
   })
-  /* overviewEl.innerText = product.description.split("\n").join("") */
-  priceEl.innerText = product.price + " €"
-
+ 
   containerElement.appendChild(containerElementCard)
   containerElementCard.appendChild(imageEl)
   containerElementCard.appendChild(titleEl)
-  /* containerElementCard.appendChild(overviewEl) */
   containerElementCard.appendChild(priceEl)
   containerElementCard.appendChild(containerButtons)
   containerButtons.appendChild(containerButtonElement)
   containerButtons.appendChild(containerFavoritesElement)
-  containerButtons.appendChild(favoritesEl)
   containerButtons.appendChild(favoritesEl)
   favoritesEl.appendChild(icon)
   containerButtonElement.appendChild(buyEl)

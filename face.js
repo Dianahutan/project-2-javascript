@@ -1,7 +1,6 @@
 // import the functions
 import { getFaceProducts } from "./main.js"
-import { createFavoritesList, removeProductFromFavorites } from './favorites.js'
-
+import { createFavoritesList, removeProductFromFavorites } from "./favorites.js"
 
 const createFaceProducts = async () => {
   const listEl = document.querySelector(".face__results")
@@ -34,28 +33,33 @@ const createElement = (product) => {
 
   const priceEl = document.createElement("div")
 
+  const containerButtons = document.createElement("div")
+  containerButtons.classList.add("buttons_heart_cart")
+
   const containerButtonElement = document.createElement("div")
   const buyEl = document.createElement("button")
   containerButtonElement.classList.add("buy_button")
+  const cartIcon = document.createElement("i")
+  cartIcon.classList.add("fas", "fa-shopping-cart")
 
   const containerFavoritesElement = document.createElement("div")
-  const favoritesEl = document.createElement("button")
   containerFavoritesElement.classList.add("favorites_button")
-  favoritesEl.innerText = "Add to favorites"
+  const favoritesEl = document.createElement("button")
+  favoritesEl.classList.add("heart-button")
+  const icon = document.createElement("i")
+  icon.classList.add("fas", "fa-heart")
+
+  /*Add event listener to the "favorites" button */
   favoritesEl.addEventListener("click", () => {
     const favorites = JSON.parse(localStorage.getItem("products")) || []
     favorites.push(product)
     localStorage.setItem("products", JSON.stringify(favorites))
   })
-  /*favoritesEl.src = "./ASSETS/heart-solid.SVG"
-    favoritesEl.style.width= "20px" */
-
 
   imageEl.src = product.api_featured_image
   imageEl.style.width = "150px"
   titleEl.innerText = product.name
   overviewEl.innerText = product.description.split("\n").join("")
-  buyEl.innerText = "Buy now!"
   priceEl.innerText = product.price + " €"
 
   containerElement.appendChild(containerElementCard)
@@ -63,11 +67,13 @@ const createElement = (product) => {
   containerElementCard.appendChild(titleEl)
   containerElementCard.appendChild(overviewEl)
   containerElementCard.appendChild(priceEl)
-  containerElementCard.appendChild(favoritesEl)
-  containerElement.appendChild(containerFavoritesElement)
-  containerFavoritesElement.appendChild(favoritesEl)
-  containerElement.appendChild(containerButtonElement)
+  containerElementCard.appendChild(containerButtons)
+  containerButtons.appendChild(containerButtonElement)
+  containerButtons.appendChild(containerFavoritesElement)
+  containerButtons.appendChild(favoritesEl)
+  favoritesEl.appendChild(icon)
   containerButtonElement.appendChild(buyEl)
+  buyEl.appendChild(cartIcon)
 
   return containerElement
 }
@@ -80,9 +86,6 @@ faceButton.addEventListener("click", () => {
 
 // call createMascaraList function
 
-
-  createFaceProducts()
-  createFavoritesList()
-  removeProductFromFavorites()
-
-
+createFaceProducts()
+createFavoritesList()
+removeProductFromFavorites()

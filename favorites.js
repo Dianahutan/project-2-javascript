@@ -46,6 +46,7 @@ export function createFavoritesList() {
 
         const removeButton = document.createElement("button")
         removeButton.innerText = "Remove from favorites"
+        removeButton.classList.add("remove_button")
         removeButton.addEventListener("click", () => {
           removeProductFromFavorites(favorite)
           favoriteElement.remove()
