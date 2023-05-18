@@ -1,6 +1,6 @@
 /* See all section */
- 
-.card-title-section{
+
+.card-title-section {
   font-weight: bold;
   font-size: 40px;
   color: #000;
@@ -9,7 +9,7 @@
   text-transform: uppercase;
 }
 
-.card-tex-section{
+.card-text-section {
   font-weight: bold;
   font-size: 20px;
   color: #000;
@@ -25,13 +25,14 @@
   justify-content: center;
 }
 
-.element_card {
+.element_card_main{
   display: flex;
   flex-direction: column;
+  align-items: baseline;
   margin: 1rem;
   padding: 1rem;
   width: 25rem;
-  height: 20rem;
+  height: 35rem;
 }
 
 .product_title {
@@ -42,35 +43,40 @@
   text-transform: uppercase;
 }
 
-/*.overview_element {
+.overview_element {
   font-family: "Helvetica Neue LT W05_55 Roman";
   font-size: 16px;
   font-weight: normal;
   line-height: 1.5;
   letter-spacing: normal;
-} */
+}
 
-/* Buy now! Button styling */
+/* Cart and heart button */
+
+.buttons_heart_cart{
+  display: flex;
+}
 
 button {
-  outline: 0;
   border: none;
-  cursor: pointer;
-  padding: 0 24px;
-  border-radius: 50px;
-  min-width: 200px;
-  height: 50px;
-  font-size: 18px;
-  background-color: #000;
-  font-weight: 500;
-  color: #fff;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
 }
 
 .buy_button {
-  display: flex;
-  justify-content: flex-start;
-  margin: 1rem;
-  padding: 1rem;
+  outline: 0;
+  width: 5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.favorites_button {
+  outline: 0;
+  width: 5rem;
+  border: none;
+  cursor: pointer;
 }
 
 /*Carousel */
@@ -101,11 +107,84 @@ button {
   text-transform: uppercase;
 }
 
-.email_form {
-  width: 330px; 
+#email__form {
+  width: 330px;
   border-radius: 10px;
   padding: 40px 30px;
   margin-top: 100px;
   background: transparent;
 }
 
+/* Favorites */
+
+#favorites-list { 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+ }
+
+.favorite {
+  padding: 1rem;
+  margin: 0,5rem;
+  width: 30rem;
+  height: 36rem;
+}
+
+.element_card_favorites {
+  display: flex;
+  flex-direction: column;
+}
+
+.title_favorites {
+  font-size: large;
+  color: #000;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.text_favorites {
+  font-family: "Helvetica Neue LT W05_55 Roman";
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+}
+
+.price_favorites {
+  display: flex;
+  justify-content: flex-start;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+
+/* Face, lips, eyes page */
+
+.face__results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.lips__results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.eyes__results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.element_card_main {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  padding: 1rem;
+  width: 25rem;
+  height: 20rem;
+}

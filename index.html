@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="./ASSETS/Maybelline_icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="stylesheet" href="style.css" />
     <title>Maybelline New York</title>
     <link
@@ -23,6 +24,7 @@
       rel="stylesheet"
       type="text/css"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   </head>
   <body>
     <!--Bootrsapt nav -->
@@ -32,7 +34,7 @@
       data-bs-theme="dark"
     >
       <div class="container">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="index.html">
           <img
             src="./ASSETS/logos-logo-small.svg"
             alt="logo"
@@ -41,7 +43,7 @@
           />
         </a>
         <div class="container-fluid">
-          <a class="navbar-brand" href="#"></a>
+          <a class="navbar-brand" href="index.html"></a>
           <button
             class="navbar-toggler"
             type="button"
@@ -57,23 +59,31 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#"
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="Favorites.html"
+                id="favorites"
                 >Favorites</a
               >
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Eyes</a>
+            <li class="nav-item-eyes" id="eyes">
+              <a class="nav-link" href="Eyes.html">Eyes</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Lips</a>
+            <li class="nav-item-lips">
+              <a class="nav-link" id="lips-link" href="Lips.html">Lips</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Face</a>
+            <li class="nav-item-face" id="face">
+              <a class="nav-link" href="Face.html">Face</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
+
+    <div class="container">
+      <section class="lips__results"></section>
+    </div>
 
     <!--Bootrsapt carousel -->
 
@@ -163,16 +173,16 @@
       <div class="card-body">
         <h5 class="card-title-section">MAKEUP STUDIO</h5>
         <p class="card-text-section">
-          Play with our virtual try on & product finders to discover your perfect makeup!
+          Play with our virtual try on & product finders to discover your
+          perfect makeup!
         </p>
-        <a href="#" class="btn text-bg-dark">See all products </a>
+        <a href="index.html" class="btn text-bg-dark">See all products </a>
       </div>
     </div>
 
     <!--API content -->
 
     <div class="list"></div>
-    <script type="module" src="/main.js"></script>
 
     <!--Placeholder -->
 
@@ -196,5 +206,7 @@
         <button class="newsletter__form-button white_btn"><b>SUBMIT</b></button>
       </div>
     </div>
+    <script type="module" src="main.js"></script>
+
   </body>
 </html>
